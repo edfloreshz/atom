@@ -1,0 +1,11 @@
+[package]
+name = "atom_api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8.3"
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = { version = "1.44.2", features = ["full"] }
+tracing-subscriber = "0.3.19"
+uuid = { version = "1.16.0", features = ["v4", "serde"] }
