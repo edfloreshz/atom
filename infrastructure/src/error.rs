@@ -1,11 +1,9 @@
-use crate::database::error::DatabaseError;
+use thiserror::Error;
 
+#[derive(Debug, Error)]
 pub enum InfrastructureError {
-    DatabaseError(DatabaseError),
-}
-
-impl From<DatabaseError> for InfrastructureError {
-    fn from(error: DatabaseError) -> Self {
-        InfrastructureError::DatabaseError(error)
-    }
+    #[error("DATABASE_ERROR")]
+    DatabaseError,
+    #[error("DOTENV_ERROR: {0}")]
+    DotEnvError(#[from] dotenv::Error),
 }

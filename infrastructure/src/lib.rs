@@ -1,4 +1,5 @@
 pub mod database;
 pub mod error;
+pub mod models;
 
-pub use supabase_rs::SupabaseClient;
+pub use postgrest::Postgrest;
